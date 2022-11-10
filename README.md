@@ -20,9 +20,15 @@ vol -f OtterCTF.vmem windows.netscan.NetScan
 
 ### Finding malware
 To find potential malware: 
+
 vol -f flounder-pc-memdump.elf windows.malfind.Malfind > malfindHtb.txt
+
 To get .exe files found in the output
+
 cat malfindHtb.txt | grep .exe
+
 To check the potential malwares in the cmd line 
+
 vol -f flounder-pc-memdump.elf windows.cmdline.CmdLine --pid 2752
+
 In this case it resulted in an encrypted powershell script, which contained the flag
